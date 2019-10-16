@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class Grupo extends UnidadGanadera{
 	
@@ -16,5 +17,34 @@ public class Grupo extends UnidadGanadera{
 		animales.add(x);
 		
 	}
+
+	public int getCantAnimales() {
+		return animales.size();
+	}
+
+	public double promEdad() {
+		double promPeso = 0;
+		Iterator<UnidadGanadera> it = animales.iterator();
+		while (it.hasNext()) {
+			promPeso += (it.next().getEdad());
+		}
+		return promEdad()/animales.size();//Tengo serias dudas al respecto considerando 01:38a.m.
+	}
+
+	@Override
+	public int getEdad() {
+		return 0;
+	}
+
+	@Override
+	public double getPeso() {
+		double pesoTotal = 0;
+		Iterator<UnidadGanadera> it = animales.iterator();
+		while (it.hasNext()) {
+			pesoTotal += it.next().getPeso();
+		}
+		return pesoTotal;
+	}
+
 
 }

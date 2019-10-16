@@ -1,7 +1,7 @@
 
 public class Animal extends UnidadGanadera {
 	
-	static private int id=0;
+	private static int id=0;
 	private int myid;
 	private int edad;
 	private double peso;
@@ -86,4 +86,8 @@ public class Animal extends UnidadGanadera {
 		return myid;
 	}
 
+	@Override
+	public double getPromPeso() {
+		return 0;
+	}
 }
