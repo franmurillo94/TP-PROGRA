@@ -23,12 +23,12 @@ public class Grupo extends UnidadGanadera{
 	}
 
 	public double promEdad() {
-		double promPeso = 0;
+		double promEdad = 0;
 		Iterator<UnidadGanadera> it = animales.iterator();
 		while (it.hasNext()) {
-			promPeso += (it.next().getEdad());
+			promEdad += (it.next().getEdad());
 		}
-		return promEdad()/animales.size();//Tengo serias dudas al respecto considerando 01:38a.m.
+		return promEdad/animales.size();//Tengo serias dudas al respecto considerando 01:38a.m.
 	}
 
 	@Override
@@ -44,6 +44,12 @@ public class Grupo extends UnidadGanadera{
 			pesoTotal += it.next().getPeso();
 		}
 		return pesoTotal;
+	}
+
+	@Override
+	public double getPromPeso() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 
