@@ -13,25 +13,28 @@ public class Camion {
 		capacidad = cap;
 	}
 	
+	public CondicionA getCondicion() {
+		return c1;
+	}
+	
 	// METODOS ARRAYLIST
-		public void additem(Animal x) {
-			
-			animales.add(x);
-			
+		public boolean additem(Animal x) {
+			if (animales.size()<=capacidad) {
+				
+				animales.add(x);
+			return true;
+			}
+			return false;
 		}
 		public void removeitem(int x) {
 			animales.remove(x);
 		
 		}
 
-	// METODOS LLENAR CAMION	
+	// METODOS CAMION
 		
-		public void subirAnimal(Animal x) {
-			
-			if (c1.compare(x)&&animales.size()<=capacidad) {
-				animales.add(x);
-			}
-		}
+		
+		
 		
 		
 		

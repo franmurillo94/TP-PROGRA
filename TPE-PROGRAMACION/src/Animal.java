@@ -90,5 +90,16 @@ public class Animal extends UnidadGanadera {
 		return 1;
 	}
 
+	public boolean isApto(Camion x) {
+		
+		return x.getCondicion().compare(this);
+	}
+
+	@Override
+	public boolean llenarCamion(Camion x) {
+		 
+		return (isApto(x)&&x.additem(this));
+		
+	}
 	
 }
