@@ -1,3 +1,4 @@
+import java.util.Set;
 
 public class Animal extends UnidadGanadera {
 	
@@ -8,21 +9,21 @@ public class Animal extends UnidadGanadera {
 	private String raza;
 	private boolean sexo;
 	private boolean capado;
-	private boolean terneros;
 	private int cant_terneros;
-	
+	//private boolean terneros; // si tiene terneros ya pario
+
 	public Animal () {
 		id++;
 	}
 	
 	public Animal ( int _edad, double _peso, String _raza) {
-		
+		super();
 		id++;
 		myid=id;
 		edad = _edad;
 		peso = _peso;
 		raza = _raza;
-		
+		this.cant_terneros = 0;
 	}
 
 	// GETTERS Y SETTERS
@@ -67,12 +68,12 @@ public class Animal extends UnidadGanadera {
 	}
 
 	public boolean isTerneros() {
-		return terneros;
+		return cant_terneros!=0;
 	}
 
-	public void setTerneros(boolean terneros) {
+	/*public void setTerneros(boolean terneros) {
 		this.terneros = terneros;
-	}
+	}*/
 
 	public int getCant_terneros() {
 		return cant_terneros;
@@ -91,15 +92,16 @@ public class Animal extends UnidadGanadera {
 	}
 
 	public boolean isApto(Camion x) {
-		
 		return x.getCondicion().compare(this);
 	}
 
 	@Override
 	public boolean llenarCamion(Camion x) {
-		 
 		return (isApto(x)&&x.additem(this));
-		
 	}
-	
+
+	@Override
+	public Set<Categoria> getCategoria(Animal a) {
+		return null;
+	}
 }

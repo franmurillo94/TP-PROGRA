@@ -17,7 +17,7 @@ public class SistemaGanadero {
 		Animal v12 = new Animal(20,30,"D Monkey");
 		
 		Grupo rod1 = new Grupo();
-		Grupo rod2 =new Grupo();
+		Grupo rod2 = new Grupo();
 		Grupo rod3 = new Grupo();
 		Grupo est1 = new Grupo();
 		Grupo emp1 = new Grupo();
