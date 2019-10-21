@@ -33,4 +33,10 @@ public class Categoria {
         criterios.remove(c);
     }
 
+    @Override
+    public String toString() {
+        return "Categoria{" +
+                "nombre='" + nombre + '\'' +
+                '}';
+    }
 }

@@ -11,16 +11,18 @@ public abstract class UnidadGanadera {
 	public abstract int getCantidad();
 	public abstract boolean llenarCamion(Camion x);
 	//public abstract String getRaza();
-	public Set<Categoria> getCategoria(Animal a) {
+	public Set<Categoria> getCategorias(Animal a) {
 	    Set<Categoria> categoria = new HashSet<>();
 		for (Categoria cat :
 				categorias) {
-			if (cat.pertence(a)) {
+			if (cat.pertence(a))
 				categoria.add(cat);
-			}
 		}
+		System.out.println(categoria.toString());
 		return categoria;
 	}
 	
-	
+	public void addCategorias(Categoria c) {
+		categorias.add(c);
+	}
 }

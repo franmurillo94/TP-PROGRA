@@ -100,8 +100,5 @@ public class Animal extends UnidadGanadera {
 		return (isApto(x)&&x.additem(this));
 	}
 
-	@Override
-	public Set<Categoria> getCategoria(Animal a) {
-		return null;
-	}
+	
 }

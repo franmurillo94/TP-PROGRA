@@ -1,8 +1,7 @@
-
+import java.util.ArrayList;
 public class SistemaGanadero {
-	
 	public static void main (String[]args) {
-		
+
 		Animal v1 = new Animal(10,20,"Ferrari");
 		Animal v2 = new Animal(10,20,"Dark Phoenix");
 		Animal v3 = new Animal(10,20,"D Monkey");
@@ -15,13 +14,15 @@ public class SistemaGanadero {
 		Animal v10 = new Animal(20,30,"D Monkey");
 		Animal v11 = new Animal(20,30,"Dark Phoenix");
 		Animal v12 = new Animal(20,30,"D Monkey");
-		
+		Animal v13 = new Animal(7,200, "Richarson");
+
+
 		Grupo rod1 = new Grupo();
 		Grupo rod2 = new Grupo();
 		Grupo rod3 = new Grupo();
 		Grupo est1 = new Grupo();
 		Grupo emp1 = new Grupo();
-		
+
 		rod1.additem(v1);
 		rod1.additem(v2);
 		rod1.additem(v3);
@@ -31,31 +32,51 @@ public class SistemaGanadero {
 		rod3.additem(v7);
 		rod3.additem(v8);
 		rod3.additem(v9);
+        rod3.additem(v13);
 		est1.additem(rod1);
 		est1.additem(rod2);
 		est1.additem(v10);
 		emp1.additem(est1);
 		emp1.additem(rod3);
 		emp1.additem(v11);
-		emp1.additem(v12);	
-		
+		emp1.additem(v12);
+
 		CondicionGPeso c1 = new CondicionGPeso(20);
 		CondicionGEdad c2 = new CondicionGEdad(32);
 		CondicionGAnd c3 = new CondicionGAnd(c1,c2);
 		CondicionGOr c4 = new CondicionGOr(c1,c2);
 
-			
-		System.out.println(emp1.getClass().getSimpleName());
+		//Nuevas pruebas
+		v13.setCapado(true);
+		v13.setSexo(true);
+		Categoria lechal = new Categoria("Lechal");
+		Categoria toro = new Categoria("Toro");
+
+		CritEdadMenor menor8 = new CritEdadMenor(8);
+		CritCapado capon = new CritCapado();
+		lechal.addCriterio(menor8);
+		toro.addCriterio(capon);
+		rod3.addCategorias(lechal);
+		rod3.addCategorias(toro);
+
+        rod3.getCategorias(v13);
+
+       // categorias.addAll(rod3.getCategorias(v13));
+		//System.out.println(categorias.size());
+
+		/////////////////////////////////////////////////////////
+		/*System.out.println(emp1.getClass().getSimpleName());
 		System.out.println("se puede vender si pesa promedio del grupo mas de : " + emp1.isVendible(c1));
 		System.out.println("se puede vender si edad promedio del grupo mas de :" + emp1.isVendible(c2));
 		System.out.println("se puede si ambas cumplen: " + emp1.isVendible(c3));
 		System.out.println("se puede si una de las dos cumple: " + emp1.isVendible(c4));
-		
+
 		System.out.println("El peso total de la hacienda es de "+ emp1.getPeso());
 		System.out.println("La cantidad de hacienda es de "+ emp1.getCantidad());
 		System.out.println("El peso promedio de la hacienda es de " + emp1.getPromedioPeso());
 		System.out.println("La edad promedio de la hacienda es de " + emp1.getPromedioEdad());
-		
+		*/
 	}
+
 
 }
