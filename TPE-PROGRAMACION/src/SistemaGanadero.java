@@ -1,5 +1,9 @@
 import java.util.ArrayList;
 public class SistemaGanadero {
+	public SistemaGanadero() {
+		ArrayList<UnidadGanadera> unidades = new ArrayList<>();
+	}
+
 	public static void main (String[]args) {
 
 		Animal v1 = new Animal(9,20,"Ferrari");
@@ -54,8 +58,22 @@ public class SistemaGanadero {
 		v14.setSexo(false);
 		v14.setCant_terneros(3);
 
-		Categoria lechal = new Categoria("Lechal");
-		Categoria ternero = new Categoria("Ternero");
+
+		CondicionACapado capon = new CondicionACapado();
+		CondicionAPario parida = new CondicionAPario();
+		CondicionAEdadMenor menor8 = new CondicionAEdadMenor(8);
+        CondicionAEdadMenor menor12 = new CondicionAEdadMenor(12);
+        CondicionAEdadMayor mayor7 = new CondicionAEdadMayor(7);
+        CondicionAEdadMenor menor24 = new CondicionAEdadMenor(24);
+        CondicionAEdadMenor menor48 = new CondicionAEdadMenor(48);
+		CondicionAEdadMayor mayor11 = new CondicionAEdadMayor(11);
+		CondicionAEdadMayor mayor15 = new CondicionAEdadMayor(15);
+		CondicionAEdadMayor mayor23 = new CondicionAEdadMayor(23);
+		CondicionAEdadMayor mayor48 = new CondicionAEdadMayor(48);
+		CondicionAAnd menor12mayor7 = new CondicionAAnd(menor12, mayor7);
+
+		Categoria lechal = new Categoria("Lechal", menor8);
+		Categoria ternero = new Categoria("Ternero", menor12mayor7);
 		Categoria aniojo = new Categoria("Añojo");
 		Categoria novillo = new Categoria("Novillo");
 		Categoria cebon = new Categoria("Cebón");
@@ -63,38 +81,6 @@ public class SistemaGanadero {
 		Categoria vaca = new Categoria("Vaca");
 		Categoria buey = new Categoria("Buey");
 		Categoria toro = new Categoria("Toro");
-
-		CritCapado capon = new CritCapado();
-		CritPario parida = new CritPario();
-		CritEdadMenor menor8 = new CritEdadMenor(8);
-        CritEdadMenor menor12 = new CritEdadMenor(12);
-        CritEdadMenor menor24 = new CritEdadMenor(24);
-        CritEdadMenor menor48 = new CritEdadMenor(48);
-        CritEdadMayor mayor7 = new CritEdadMayor(7);
-        CritEdadMayor mayor11 = new CritEdadMayor(11);
-        CritEdadMayor mayor15 = new CritEdadMayor(15);
-        CritEdadMayor mayor23 = new CritEdadMayor(23);
-        CritEdadMayor mayor48 = new CritEdadMayor(48);
-        CritNoPario noParida = new CritNoPario();
-
-		lechal.addCriterio(menor8);
-		toro.addCriterio(capon);
-        ternero.addCriterio(menor12);
-        ternero.addCriterio(mayor7);
-        aniojo.addCriterio(mayor11);
-        aniojo.addCriterio(menor24);
-        novillo.addCriterio(mayor23);
-        novillo.addCriterio(menor48);
-        cebon.addCriterio(mayor11);
-        cebon.addCriterio(capon);
-        cebon.addCriterio(menor48);
-        vaquillona.addCriterio(mayor15);
-        vaquillona.addCriterio(noParida);
-        vaca.addCriterio(mayor15);
-        vaca.addCriterio(parida);
-
-        buey.addCriterio(mayor48);
-        buey.addCriterio(capon);
 
 		emp1.addCategorias(lechal);
 		emp1.addCategorias(toro);
@@ -108,6 +94,7 @@ public class SistemaGanadero {
 
         emp1.getCategorias(v13);
         emp1.getCategorias(v14);
+        v13.getCategorias(v13);
 
 		/////////////////////////////////////////////////////////
 		System.out.println(emp1.getClass().getSimpleName());
