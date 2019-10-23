@@ -6,20 +6,23 @@ public class SistemaGanadero {
 
 	public static void main (String[]args) {
 
-		Animal v1 = new Animal(9,20,"Ferrari");
-		Animal v2 = new Animal(10,20,"Dark Phoenix");
-		Animal v3 = new Animal(10,20,"D Monkey");
-		Animal v4 = new Animal(10,30,"D Monkey");
-		Animal v5 = new Animal(10,30,"Dark Phoenix");
-		Animal v6 = new Animal(10,30,"D Monkey");
-		Animal v7 = new Animal(20,20,"Ferrari");
-		Animal v8 = new Animal(20,20,"Dark Phoenix");
-		Animal v9 = new Animal(20,20,"D Monkey");
-		Animal v10 = new Animal(20,30,"D Monkey");
-		Animal v11 = new Animal(20,30,"Dark Phoenix");
-		Animal v12 = new Animal(20,30,"D Monkey");
-		Animal v13 = new Animal(7,200, "Richarson");
-		Animal v14 = new Animal(16,200, "Richarson");
+		Animal v1 = new Animal(9,20,"Ferrari", true);
+		Animal v2 = new Animal(10,20,"Dark Phoenix", true);
+		Animal v3 = new Animal(10,20,"D Monkey", false);
+		Animal v4 = new Animal(10,30,"D Monkey", false);
+		Animal v5 = new Animal(10,30,"Dark Phoenix", true);
+		Animal v6 = new Animal(10,30,"D Monkey", false);
+		Animal v7 = new Animal(20,20,"Ferrari", true);
+		Animal v8 = new Animal(20,20,"Dark Phoenix", false);
+		Animal v9 = new Animal(20,20,"D Monkey", true);
+		Animal v10 = new Animal(20,30,"D Monkey", true);
+		Animal v11 = new Animal(20,30,"Dark Phoenix", false);
+		Animal v12 = new Animal(20,30,"D Monkey", true);
+		Animal v13 = new Animal(7,200, "Richarson", true);
+		Animal v14 = new Animal(16,200, "Richarson", false);
+		Animal v15 = new Animal(10,200, "Richarson", true);
+		Animal v16 = new Animal(10,200, "Richarson", false);
+		Animal v17 = new Animal(32,200, "Richarson", true);
 
 
 
@@ -54,47 +57,64 @@ public class SistemaGanadero {
 
 		//Nuevas pruebas
 		v13.setCapado(true);
-		v13.setSexo(true);
-		v14.setSexo(false);
 		v14.setCant_terneros(3);
 
-
+		CondicionAisMacho macho = new CondicionAisMacho();
+		CondicionANegada hembra = new CondicionANegada(macho);
 		CondicionACapado capon = new CondicionACapado();
+		CondicionANegada caponN = new CondicionANegada(capon);
 		CondicionAPario parida = new CondicionAPario();
+		CondicionANegada paridaN = new CondicionANegada(parida);
 		CondicionAEdadMenor menor8 = new CondicionAEdadMenor(8);
+		CondicionANegada menor8N = new CondicionANegada(menor8);
         CondicionAEdadMenor menor12 = new CondicionAEdadMenor(12);
-        CondicionAEdadMayor mayor7 = new CondicionAEdadMayor(7);
+		CondicionANegada menor12N = new CondicionANegada(menor12);
         CondicionAEdadMenor menor24 = new CondicionAEdadMenor(24);
+		CondicionANegada menor24N = new CondicionANegada(menor24);
+        CondicionAEdadMenor menor15 = new CondicionAEdadMenor(24);
+		CondicionANegada menor15N = new CondicionANegada(menor15);
         CondicionAEdadMenor menor48 = new CondicionAEdadMenor(48);
-		CondicionAEdadMayor mayor11 = new CondicionAEdadMayor(11);
-		CondicionAEdadMayor mayor15 = new CondicionAEdadMayor(15);
-		CondicionAEdadMayor mayor23 = new CondicionAEdadMayor(23);
-		CondicionAEdadMayor mayor48 = new CondicionAEdadMayor(48);
-		CondicionAAnd menor12mayor7 = new CondicionAAnd(menor12, mayor7);
+		CondicionANegada menor48N = new CondicionANegada(menor48);
+		CondicionAAnd mayor7menor12 = new CondicionAAnd(menor8N ,menor12);
+		CondicionAAnd mayor11menor24 = new CondicionAAnd(menor12N, menor24);
+		CondicionAAnd mayor23menor48 = new CondicionAAnd(menor24N, menor48);
+		CondicionAAnd mayor12menor48 = new CondicionAAnd(menor12N, menor48);
+		CondicionAAnd mayor12menor48Capon = new CondicionAAnd(mayor12menor48, capon);
+		CondicionAAnd mayor15Noparida = new CondicionAAnd(menor15N, paridaN);
+		CondicionAAnd mayor15NoparidaHembra = new CondicionAAnd(mayor15Noparida, hembra);
+		CondicionAAnd mayor15parida = new CondicionAAnd(menor15N, parida);
+		CondicionAAnd mayor15paridaHembra= new CondicionAAnd(mayor15parida, parida);
+		CondicionAAnd mayor48Capon = new CondicionAAnd(menor48N, capon);
+		CondicionAAnd machoCapoN = new CondicionAAnd(macho, caponN);
+
+
 
 		Categoria lechal = new Categoria("Lechal", menor8);
-		Categoria ternero = new Categoria("Ternero", menor12mayor7);
-		Categoria aniojo = new Categoria("Añojo");
-		Categoria novillo = new Categoria("Novillo");
-		Categoria cebon = new Categoria("Cebón");
-		Categoria vaquillona = new Categoria("Vaquillona");
-		Categoria vaca = new Categoria("Vaca");
-		Categoria buey = new Categoria("Buey");
-		Categoria toro = new Categoria("Toro");
+		Categoria ternero = new Categoria("Ternero", mayor7menor12);
+		Categoria aniojo = new Categoria("Añojo", mayor11menor24);
+		Categoria novillo = new Categoria("Novillo", mayor23menor48);
+		Categoria cebon = new Categoria("Cebón", mayor12menor48Capon);
+		Categoria vaquillona = new Categoria("Vaquillona", mayor15NoparidaHembra);
+		Categoria vaca = new Categoria("Vaca", mayor15paridaHembra);
+		Categoria buey = new Categoria("Buey", mayor48Capon);
+		Categoria toro = new Categoria("Toro", machoCapoN);
 
-		emp1.addCategorias(lechal);
-		emp1.addCategorias(toro);
-		emp1.addCategorias(ternero);
-		emp1.addCategorias(novillo);
-		emp1.addCategorias(cebon);
-		emp1.addCategorias(vaquillona);
-		emp1.addCategorias(aniojo);
-		emp1.addCategorias(vaca);
-		emp1.addCategorias(buey);
+		Ministerio minEsp = new Ministerio();
+		minEsp.addCategorias(lechal);
+		minEsp.addCategorias(ternero);
+		minEsp.addCategorias(aniojo);
+		minEsp.addCategorias(novillo);
+		minEsp.addCategorias(cebon);
+		minEsp.addCategorias(vaquillona);
+		minEsp.addCategorias(vaca);
+		minEsp.addCategorias(buey);
+		minEsp.addCategorias(toro);
 
-        emp1.getCategorias(v13);
-        emp1.getCategorias(v14);
-        v13.getCategorias(v13);
+		minEsp.getCategorias(v13);
+		minEsp.getCategorias(v14);
+		minEsp.getCategorias(v15);
+		minEsp.getCategorias(v16);
+		minEsp.getCategorias(v17);
 
 		/////////////////////////////////////////////////////////
 		System.out.println(emp1.getClass().getSimpleName());

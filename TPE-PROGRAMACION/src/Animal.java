@@ -16,7 +16,7 @@ public class Animal extends UnidadGanadera {
 		id++;
 	}
 	
-	public Animal ( int _edad, double _peso, String _raza) {
+	public Animal ( int _edad, double _peso, String _raza, boolean sexo) {
 		super();
 		id++;
 		myid=id;
@@ -24,6 +24,7 @@ public class Animal extends UnidadGanadera {
 		peso = _peso;
 		raza = _raza;
 		this.cant_terneros = 0;
+		this.sexo = sexo;
 	}
 
 	// GETTERS Y SETTERS
@@ -51,7 +52,7 @@ public class Animal extends UnidadGanadera {
 		this.raza = raza;
 	}
 
-	public boolean isSexo() {
+	public boolean isMacho() {
 		return sexo;
 	}
 
@@ -80,7 +81,9 @@ public class Animal extends UnidadGanadera {
 	}
 
 	public void setCant_terneros(int cant_terneros) {
+		if (!sexo)
 		this.cant_terneros = cant_terneros;
+		else System.out.println("No se pueden agregar terneros a un macho");
 	}
 	
 	public int getId() {

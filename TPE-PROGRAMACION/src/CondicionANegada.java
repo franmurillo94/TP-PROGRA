@@ -8,7 +8,7 @@ public class CondicionANegada extends CondicionA{
 	}
 
 	public boolean compare(Animal x) {
-		return !(c1.compare(x));
+		return !c1.compare(x);
 	}
 	
 

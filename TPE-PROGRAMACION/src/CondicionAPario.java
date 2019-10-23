@@ -1,6 +1,7 @@
-public class CondicionAPario implements Criterio{
+public class CondicionAPario extends CondicionA{
+
     @Override
-    public boolean cumpleCrit(Animal a) {
+    public boolean compare(Animal a) {
         return a.getCant_terneros() != 0;
     }
 }
