@@ -11,6 +11,4 @@ public abstract class UnidadGanadera {
 	public abstract int getCantidad();
 	public abstract boolean llenarCamion(Camion x);
 	//public abstract String getRaza();
-
-
 }

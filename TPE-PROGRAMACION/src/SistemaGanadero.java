@@ -1,8 +1,7 @@
 import java.util.ArrayList;
+import java.util.Set;
+
 public class SistemaGanadero {
-	public SistemaGanadero() {
-		ArrayList<UnidadGanadera> unidades = new ArrayList<>();
-	}
 
 	public static void main (String[]args) {
 
@@ -110,11 +109,12 @@ public class SistemaGanadero {
 		minEsp.addCategorias(buey);
 		minEsp.addCategorias(toro);
 
-		minEsp.getCategorias(v13);
-		minEsp.getCategorias(v14);
-		minEsp.getCategorias(v15);
-		minEsp.getCategorias(v16);
-		minEsp.getCategorias(v17);
+		listarCategoriasAnimal(minEsp.getCategorias(v13), v13);
+		listarCategoriasAnimal(minEsp.getCategorias(v14), v14);
+		listarCategoriasAnimal(minEsp.getCategorias(v15), v15);
+		listarCategoriasAnimal(minEsp.getCategorias(v16), v16);
+		listarCategoriasAnimal(minEsp.getCategorias(v17), v17);
+		listarCategoriasAnimal(minEsp.getCategorias(v1), v1);
 
 		/////////////////////////////////////////////////////////
 		System.out.println(emp1.getClass().getSimpleName());
@@ -130,5 +130,13 @@ public class SistemaGanadero {
 
 	}
 
+	private static void listarCategoriasAnimal(Set<Categoria> categorias, Animal a) {
+			System.out.println("Categorias del animal "+ a.getId());
+		for (Categoria c:
+			 categorias
+		) {
+			System.out.println(c.toString());
+		}
 
+	}
 }
