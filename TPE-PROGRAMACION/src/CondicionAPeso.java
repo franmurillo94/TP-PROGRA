@@ -1,5 +1,4 @@
-
-public class CondicionAPeso extends CondicionA {
+public class CondicionAPeso implements CondicionA {
 	
 	private double peso;
 	
@@ -9,7 +8,7 @@ public class CondicionAPeso extends CondicionA {
 		
 	}
 	
-	public boolean compare(Animal x) {
+	public boolean cumple(Animal x) {
 		return x.getPeso()>peso;
 	}
 

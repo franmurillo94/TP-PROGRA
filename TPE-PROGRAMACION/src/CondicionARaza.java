@@ -1,5 +1,4 @@
-
-public class CondicionARaza extends CondicionA {
+public class CondicionARaza implements CondicionA {
 	
 private String raza;
 	
@@ -9,7 +8,7 @@ private String raza;
 		
 	}
 	
-	public boolean compare(Animal x) {
+	public boolean cumple(Animal x) {
 		return x.getRaza().equals(raza);
 	}
 

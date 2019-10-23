@@ -1,5 +1,4 @@
-
-public class CondicionGAnd extends CondicionG {
+public class CondicionGAnd implements CondicionG {
 
 	private CondicionG c1;
 	private CondicionG c2;
@@ -14,8 +13,8 @@ public class CondicionGAnd extends CondicionG {
 
 
 	@Override
-	public boolean compare(Grupo g) {
-		return c1.compare(g)&&c2.compare(g);
+	public boolean cumple(Grupo g) {
+		return c1.cumple(g)&&c2.cumple(g);
 	}
 	
 	

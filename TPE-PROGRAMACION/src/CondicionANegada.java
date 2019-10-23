@@ -1,5 +1,4 @@
-
-public class CondicionANegada extends CondicionA{
+public class CondicionANegada implements CondicionA{
 
 	private CondicionA c1; 
 	
@@ -7,8 +6,8 @@ public class CondicionANegada extends CondicionA{
 		this.c1 = c1;
 	}
 
-	public boolean compare(Animal x) {
-		return !c1.compare(x);
+	public boolean cumple(Animal x) {
+		return !c1.cumple(x);
 	}
 	
 

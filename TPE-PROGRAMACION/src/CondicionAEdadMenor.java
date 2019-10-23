@@ -1,4 +1,4 @@
-public class CondicionAEdadMenor extends CondicionA {
+public class CondicionAEdadMenor implements CondicionA {
     private int edad;
 
     public CondicionAEdadMenor(int edad) {
@@ -6,7 +6,7 @@ public class CondicionAEdadMenor extends CondicionA {
     }
 
     @Override
-    public boolean compare(Animal a) {
+    public boolean cumple(Animal a) {
         return a.getEdad()<edad;
     }
 

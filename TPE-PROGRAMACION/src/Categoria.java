@@ -1,4 +1,3 @@
-
 public class Categoria{
     CondicionA criterios;
     String nombre;
@@ -9,7 +8,7 @@ public class Categoria{
     }
 
     public boolean pertence(Animal a) {
-        return criterios.compare(a);
+        return criterios.cumple(a);
     }
 
     @Override

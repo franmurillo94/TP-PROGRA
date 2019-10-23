@@ -1,5 +1,4 @@
-
-public class CondicionAOr extends CondicionA {
+public class CondicionAOr implements CondicionA {
 
 	private CondicionA c1;
 	private CondicionA c2;
@@ -10,8 +9,8 @@ public class CondicionAOr extends CondicionA {
 	}
 
 
-	public boolean compare(Animal x) {
-		return c1.compare(x)||c2.compare(x);
+	public boolean cumple(Animal x) {
+		return c1.cumple(x)||c2.cumple(x);
 	}
 	
 }

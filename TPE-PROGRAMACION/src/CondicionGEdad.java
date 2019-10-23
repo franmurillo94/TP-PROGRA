@@ -1,5 +1,4 @@
-
-public class CondicionGEdad extends CondicionG {
+public class CondicionGEdad implements CondicionG {
 	
 	private double edad;
 
@@ -8,7 +7,7 @@ public class CondicionGEdad extends CondicionG {
 		edad=_edad;
 	}
 
-	public boolean compare(Grupo x) {
+	public boolean cumple(Grupo x) {
 		return x.getPromedioEdad()>edad; 
 	}
 }

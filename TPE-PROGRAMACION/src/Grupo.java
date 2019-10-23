@@ -78,7 +78,7 @@ public class Grupo extends UnidadGanadera {
 
 	public boolean isVendible(CondicionG g) {
 
-		return g.compare(this);
+		return g.cumple(this);
 	}
 
 	// VENTA EN CAMION

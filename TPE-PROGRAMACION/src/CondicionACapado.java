@@ -1,6 +1,6 @@
-public class CondicionACapado extends CondicionA {
+public class CondicionACapado implements CondicionA {
     @Override
-    public boolean compare(Animal a) {
+    public boolean cumple(Animal a) {
         return a.isCapado();
     }
 }

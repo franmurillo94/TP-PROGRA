@@ -1,6 +1,6 @@
-public class CondicionAisMacho extends CondicionA {
+public class CondicionAisMacho implements CondicionA {
     @Override
-    public boolean compare(Animal a) {
+    public boolean cumple(Animal a) {
         return a.isMacho();
     }
 }

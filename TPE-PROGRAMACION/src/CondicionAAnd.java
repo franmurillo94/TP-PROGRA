@@ -1,5 +1,4 @@
-
-public class CondicionAAnd extends CondicionA{
+public class CondicionAAnd implements CondicionA{
 	
 	private CondicionA c1;
 	private CondicionA c2;
@@ -12,9 +11,9 @@ public class CondicionAAnd extends CondicionA{
 	}
 	
 	
-	public boolean compare(Animal x) {
+	public boolean cumple(Animal x) {
 		
-		return c1.compare(x)&&c2.compare(x);
+		return c1.cumple(x)&&c2.cumple(x);
 	}
 	
 	

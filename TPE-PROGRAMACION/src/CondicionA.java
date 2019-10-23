@@ -1,6 +1,5 @@
-
-public abstract class CondicionA {
+interface CondicionA {
 			
-	public abstract boolean compare(Animal x);
+	boolean cumple(Animal x);
 
 }

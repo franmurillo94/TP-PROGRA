@@ -1,8 +1,5 @@
-
-public abstract class CondicionG {
+interface CondicionG {
 	
-	public abstract boolean compare(Grupo g);
-	
-	
+	boolean cumple(Grupo g);
 
 }

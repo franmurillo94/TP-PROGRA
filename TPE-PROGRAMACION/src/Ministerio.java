@@ -12,6 +12,7 @@ public class Ministerio {
             if (cat.pertence(a))
                 categoria.add(cat);
         }
+
         return categoria;
     }
 

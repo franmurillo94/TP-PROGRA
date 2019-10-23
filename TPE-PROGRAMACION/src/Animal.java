@@ -1,5 +1,3 @@
-import java.util.Set;
-
 public class Animal extends UnidadGanadera {
 	
 	static private int id=0;
@@ -94,13 +92,13 @@ public class Animal extends UnidadGanadera {
 		return 1;
 	}
 
-	public boolean isApto(Camion x) {
-		return x.getCondicion().compare(this);
+	public boolean isApto(CondicionA x) {
+		return x.cumple(this);
 	}
 
 	@Override
 	public boolean llenarCamion(Camion x) {
-		return (isApto(x)&&x.additem(this));
+		return (isApto(x.getCondicion())&&x.additem(this));
 	}
 
 	

@@ -1,5 +1,4 @@
-
-public class CondicionGRaza extends CondicionG{
+public class CondicionGRaza implements CondicionG{
 	
 private String raza;
 	
@@ -9,13 +8,13 @@ private String raza;
 		
 	}
 	/*
-	public boolean compare(Grupo x) {
+	public boolean cumple(Grupo x) {
 		return x.getRaza().equals(raza);
 	}
 	*/
 
 	@Override
-	public boolean compare(Grupo g) {
+	public boolean cumple(Grupo g) {
 		// TODO Auto-generated method stub
 		return false;
 	}

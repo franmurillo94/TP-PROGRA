@@ -1,5 +1,4 @@
-
-public class CondicionGPeso extends CondicionG{
+public class CondicionGPeso implements CondicionG{
 	
 	private double peso;
 	
@@ -9,7 +8,7 @@ public class CondicionGPeso extends CondicionG{
 		
 	}
 	
-	public boolean compare(Grupo x) {
+	public boolean cumple(Grupo x) {
 		
 		return x.getPromedioPeso()>peso;
 	}
