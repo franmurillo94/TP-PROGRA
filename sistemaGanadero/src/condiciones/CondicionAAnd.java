@@ -1,5 +1,7 @@
 package condiciones;
 
+import sistema.Animal;
+
 public class CondicionAAnd implements CondicionA{
 	
 	private CondicionA c1;
@@ -11,13 +13,8 @@ public class CondicionAAnd implements CondicionA{
 		c2 = _c2;
 		
 	}
-	
-	
-	public boolean cumple(Animal x) {
-		
-		return c1.cumple(x)&&c2.cumple(x);
-	}
-	
-	
 
+	@Override
+	public boolean cumple(Animal x) {
+		return c1.cumple(x)&&c2.cumple(x);	}
 }

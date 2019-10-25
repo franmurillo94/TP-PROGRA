@@ -1,5 +1,7 @@
 package condiciones;
 
+import sistema.Grupo;
+
 public class CondicionGRaza implements CondicionG{
 	
 private String raza;

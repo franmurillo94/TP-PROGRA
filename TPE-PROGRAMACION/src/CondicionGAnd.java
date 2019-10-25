@@ -1,3 +1,5 @@
+package condiciones;
+
 public class CondicionGAnd implements CondicionG {
 
 	private CondicionG c1;

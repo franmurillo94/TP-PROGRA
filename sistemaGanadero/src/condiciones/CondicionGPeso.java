@@ -1,5 +1,7 @@
 package condiciones;
 
+import sistema.Grupo;
+
 public class CondicionGPeso implements CondicionG{
 	
 	private double peso;

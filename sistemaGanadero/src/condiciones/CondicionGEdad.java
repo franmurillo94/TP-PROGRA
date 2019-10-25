@@ -1,5 +1,7 @@
 package condiciones;
 
+import sistema.Grupo;
+
 public class CondicionGEdad implements CondicionG {
 	
 	private double edad;

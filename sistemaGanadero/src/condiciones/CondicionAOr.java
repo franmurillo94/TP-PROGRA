@@ -1,5 +1,7 @@
 package condiciones;
 
+import sistema.Animal;
+
 public class CondicionAOr implements CondicionA {
 
 	private CondicionA c1;

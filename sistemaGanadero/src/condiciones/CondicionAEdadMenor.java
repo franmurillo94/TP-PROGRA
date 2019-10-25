@@ -1,5 +1,7 @@
 package condiciones;
 
+import sistema.Animal;
+
 public class CondicionAEdadMenor implements CondicionA {
     private int edad;
 

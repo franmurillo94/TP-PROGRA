@@ -1,5 +1,7 @@
 package condiciones;
 
+import sistema.Animal;
+
 public class CondicionAPario implements CondicionA{
 
     @Override

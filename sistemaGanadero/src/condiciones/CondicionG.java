@@ -1,6 +1,8 @@
 package condiciones;
 
-interface CondicionG {
+import sistema.Grupo;
+
+public interface CondicionG {
 	
 	boolean cumple(Grupo g);
 

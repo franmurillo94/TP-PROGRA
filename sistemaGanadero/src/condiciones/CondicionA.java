@@ -1,6 +1,8 @@
 package condiciones;
 
-interface CondicionA {
+import sistema.*;
+
+public interface CondicionA {
 			
 	boolean cumple(Animal x);
 

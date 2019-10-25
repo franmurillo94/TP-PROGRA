@@ -1,6 +1,8 @@
 package condiciones;
 
-public class CondicionGOr implements CondicionG {
+import sistema.Grupo;
+
+public class CondicionGAnd implements CondicionG {
 
 	private CondicionG c1;
 	private CondicionG c2;
@@ -8,7 +10,7 @@ public class CondicionGOr implements CondicionG {
 	
 	
 	
-	public CondicionGOr(CondicionG c1, CondicionG c2) {
+	public CondicionGAnd(CondicionG c1, CondicionG c2) {
 		this.c1 = c1;
 		this.c2 = c2;
 	}
@@ -16,7 +18,7 @@ public class CondicionGOr implements CondicionG {
 
 	@Override
 	public boolean cumple(Grupo g) {
-		return c1.cumple(g)||c2.cumple(g);
+		return c1.cumple(g)&&c2.cumple(g);
 	}
 	
 	

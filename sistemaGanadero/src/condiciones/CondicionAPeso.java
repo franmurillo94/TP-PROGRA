@@ -1,5 +1,7 @@
 package condiciones;
 
+import sistema.Animal;
+
 public class CondicionAPeso implements CondicionA {
 	
 	private double peso;

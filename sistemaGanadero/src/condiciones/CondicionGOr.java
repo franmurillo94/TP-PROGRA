@@ -1,5 +1,7 @@
 package condiciones;
 
+import sistema.Grupo;
+
 public class CondicionGOr implements CondicionG {
 
 	private CondicionG c1;
